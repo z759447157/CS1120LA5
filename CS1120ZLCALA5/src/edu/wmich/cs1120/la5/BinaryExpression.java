@@ -8,11 +8,13 @@ public class BinaryExpression implements IExpression{
 	@Override
 	public Integer getValue() {
 		// TODO Auto-generated method stub
-		return op.perform(left, right);;
+		return op.perform(left, right);
 	}
 	public BinaryExpression(IExpression left, IExpression right, IOperation op) {
 		// TODO Auto-generated method stub
-		op.perform(left, right);
+		this.left = left;
+		this.right = right;
+		this.op = op;
 	}
 
 }

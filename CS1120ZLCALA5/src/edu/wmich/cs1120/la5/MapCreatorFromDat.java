@@ -27,25 +27,37 @@ public class MapCreatorFromDat implements IMapCreator{
 		char operation;
 		int val1;
 		int val2;
-        boolean endOfFile = false;
-        
-        while(!endOfFile){
+        do{
         	try{
         		if(n == 10){
     				n = 0;
     				i++;
     			}
-        		data=data_in.readUTF();
-        		splitLine = data.split(" ");
-    			basicEnergyCost = Double.parseDouble(splitLine[0]);
-    			elevation = Double.parseDouble(splitLine[1]);
-    			radiation = Double.parseDouble(splitLine[2]);
-    			operation = splitLine[3].charAt(0);
-    			val1 = Integer.parseInt(splitLine[4]);
-    			val2 = Integer.parseInt(splitLine[5]);
-    			
+//        		data=data_in.readUTF();
+//        		splitLine = data.split(" ");
+//    			basicEnergyCost = Double.parseDouble(splitLine[0]);
+//    			elevation = Double.parseDouble(splitLine[1]);
+//    			radiation = Double.parseDouble(splitLine[2]);
+//    			operation = splitLine[3].charAt(0);
+//    			val1 = Integer.parseInt(splitLine[4]);
+//    			val2 = Integer.parseInt(splitLine[5]);
+        		
+        		basicEnergyCost = file.readDouble();
+        		elevation = file.readDouble();
+        		radiation = file.readDouble();
+        		operation = file.readChar();
+        		val1 = file.readInt();
+        		val2 = file.readInt();
+        		System.out.println(basicEnergyCost + " " + elevation + " " + radiation + " " + operation + " " + val1 + " " + val2);
+        		
     			factory = ExpressionFactory.getExpression(operation, val1, val2);
-    			file.seek(factory.getValue());
+    			System.out.println(factory.getValue());
+    			if(factory.getValue() >= 0){
+    				file.seek(factory.getValue() * 34);
+    				System.out.println(factory.getValue());
+    			}
+    			
+    			
     			if(radiation >= 0.5 || (radiation < 0.5 && elevation > threshold * 0.5)){
     				Area highArea = new HighArea(basicEnergyCost,elevation,radiation);
     				area[i][n] = highArea; 
@@ -55,13 +67,13 @@ public class MapCreatorFromDat implements IMapCreator{
     				area[i][n] = lowArea; 
     			}
     			n++;
-    			
         	}
         	
         	catch(EOFException e){
-        		endOfFile=true;
+        		
         	}
         }
+        while(factory.getValue() != -1);
         scanner.setTerrain(area);
 	}
 

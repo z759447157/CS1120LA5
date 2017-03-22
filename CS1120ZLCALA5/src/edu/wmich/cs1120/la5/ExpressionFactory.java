@@ -12,7 +12,7 @@ public class ExpressionFactory {
 			return anything;
 		case '-':
 			IOperation subtraction = new Subtraction();
-			BinaryExpression anything2 = new BinaryExpression(literal1, literal2,add);
+			BinaryExpression anything2 = new BinaryExpression(literal1, literal2,subtraction);
 
 			return anything2;
 		default:

@@ -17,10 +17,13 @@ public class MapCreatorFromDat implements IMapCreator{
         int i = 0;
 		int n = 0;
         String data;
-        String[] splitLine = new String[3];
+        String[] splitLine = new String[5];
         double basicEnergyCost;
 		double elevation;
 		double radiation;
+		char operation;
+		int val1;
+		int val2;
         boolean endOfFile = false;
         
         while(!endOfFile){
@@ -34,6 +37,10 @@ public class MapCreatorFromDat implements IMapCreator{
     			basicEnergyCost = Double.parseDouble(splitLine[0]);
     			elevation = Double.parseDouble(splitLine[1]);
     			radiation = Double.parseDouble(splitLine[2]);
+    			operation = splitLine[3].charAt(0);
+    			val1 = Integer.parseInt(splitLine[4]);
+    			val2 = Integer.parseInt(splitLine[5]);
+    			ExpressionFactory.getExpression(operation, val1, val2);
     			if(radiation >= 0.5 || (radiation < 0.5 && elevation > threshold * 0.5)){
     				Area highArea = new HighArea(basicEnergyCost,elevation,radiation);
     				area[i][n] = highArea; 

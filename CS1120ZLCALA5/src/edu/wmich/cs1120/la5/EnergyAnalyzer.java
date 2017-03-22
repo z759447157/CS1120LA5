@@ -17,8 +17,8 @@ public class EnergyAnalyzer implements IRover{
 	@Override
 	public void setPath(ArrayList<IArea> path) {
 		// TODO Auto-generated method stub
-		path = mcft.getScanner().getPath(startRow, startCol);
-		path = mcfd.getScanner().getPath(startRow, startCol);
+		path = mcft.getScanner().getPath(startRow, startColumn);
+		path = mcfd.getScanner().getPath(startRow, startColumn);
 	}
 
 	@Override

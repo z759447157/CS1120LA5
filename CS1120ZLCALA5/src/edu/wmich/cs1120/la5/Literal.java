@@ -7,5 +7,9 @@ public class Literal implements IExpression{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public Literal(Integer value){
+		
+	}
 
 }

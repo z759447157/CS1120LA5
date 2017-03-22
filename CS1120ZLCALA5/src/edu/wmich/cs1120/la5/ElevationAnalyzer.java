@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 public class ElevationAnalyzer implements IRover{
 
-	private MapCreatorFromTxt mcft;
-	private MapCreatorFromDat mcfd;
 	private ArrayList<IArea> path;
 	private String analysis;
 	@Override
@@ -17,8 +15,7 @@ public class ElevationAnalyzer implements IRover{
 	@Override
 	public void setPath(ArrayList<IArea> path) {
 		// TODO Auto-generated method stub
-		path = mcft.getScanner().getPath(startRow, startColumn);
-		path = mcfd.getScanner().getPath(startRow, startColumn);
+		this.path = path;
 	}
 
 	@Override
@@ -28,7 +25,7 @@ public class ElevationAnalyzer implements IRover{
 		for(int i=0; i<path.size();i++){
 			averageElevation += getPath().get(i).getElevation();
 		}
-		analysis = Double.toString(averageElevation/path.size());
+		analysis = toString() + Double.toString(averageElevation/path.size());
 	}
 
 	@Override
@@ -41,6 +38,11 @@ public class ElevationAnalyzer implements IRover{
 	public void setAnalysis(String analysis) {
 		// TODO Auto-generated method stub
 		this.analysis = analysis;
+	}
+	
+	@Override
+	public String toString(){
+		return "Elevation analyzer: ";
 	}
 
 }

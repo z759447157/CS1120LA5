@@ -4,16 +4,19 @@ import java.io.DataInputStream;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 
 public class MapCreatorFromDat implements IMapCreator{
 
 	private TerrainScanner scanner = new TerrainScanner();
-	private Area[][] area = new Area[10][10];
+	private IArea[][] area = new IArea[10][10];
+	private IExpression factory;
 	@Override
 	public void scanTerrain(String fileName, int threshold) throws IOException {
 		// TODO Auto-generated method stub
 		FileInputStream file_in = new FileInputStream("Terrain.dat");
         DataInputStream data_in = new DataInputStream (file_in );
+        RandomAccessFile file = new RandomAccessFile("Terrain.dat","r");
         int i = 0;
 		int n = 0;
         String data;
@@ -40,7 +43,9 @@ public class MapCreatorFromDat implements IMapCreator{
     			operation = splitLine[3].charAt(0);
     			val1 = Integer.parseInt(splitLine[4]);
     			val2 = Integer.parseInt(splitLine[5]);
-    			ExpressionFactory.getExpression(operation, val1, val2);
+    			
+    			factory = ExpressionFactory.getExpression(operation, val1, val2);
+    			file.seek(factory.getValue());
     			if(radiation >= 0.5 || (radiation < 0.5 && elevation > threshold * 0.5)){
     				Area highArea = new HighArea(basicEnergyCost,elevation,radiation);
     				area[i][n] = highArea; 

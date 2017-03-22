@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 public class EnergyAnalyzer implements IRover{
 
-	private MapCreatorFromTxt mcft;
-	private MapCreatorFromDat mcfd;
 	private ArrayList<IArea> path;
 	private String analysis;
 	@Override
@@ -17,8 +15,7 @@ public class EnergyAnalyzer implements IRover{
 	@Override
 	public void setPath(ArrayList<IArea> path) {
 		// TODO Auto-generated method stub
-		path = mcft.getScanner().getPath(startRow, startColumn);
-		path = mcfd.getScanner().getPath(startRow, startColumn);
+		this.path = path;
 	}
 
 	@Override
@@ -28,7 +25,7 @@ public class EnergyAnalyzer implements IRover{
 		for(int i=0; i<path.size();i++){
 			pathEnergy += getPath().get(i).calcConsumedEnergy();
 		}
-		analysis = Double.toString(pathEnergy);
+		analysis = toString() + Double.toString(pathEnergy);
 	}
 
 	@Override
@@ -42,5 +39,9 @@ public class EnergyAnalyzer implements IRover{
 		// TODO Auto-generated method stub
 		this.analysis = analysis;
 	}
-
+	
+	@Override
+	public String toString(){
+		return "Energy analyzer: ";
+	}
 }

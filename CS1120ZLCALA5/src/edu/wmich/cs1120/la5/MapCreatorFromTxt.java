@@ -12,8 +12,8 @@ public class MapCreatorFromTxt implements IMapCreator {
 	
 	/**
 	 * Scan terrain, read file. Declare low/high area base on radiation. Read area object to 2D array.
-	 * @param fileName
-	 * @param threshold
+	 * @param fileName String
+	 * @param threshold int
 	 * @throws IOException - need this for reading files.
 	 */
 	@Override
@@ -67,7 +67,7 @@ public class MapCreatorFromTxt implements IMapCreator {
 
 	/**
 	 * Set Scanner for TerrainScanner.
-	 * @param scanner
+	 * @param scanner TerrainScanner
 	 */
 	@Override
 	public void setScanner(TerrainScanner scanner) {

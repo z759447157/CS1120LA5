@@ -13,7 +13,7 @@ public interface IArea {
 
 	/**
 	 * Set basic energy cost for area.
-	 * @param basicEnergyCost
+	 * @param basicEnergyCost double
 	 */
 	void setBasicEnergyCost(double basicEnergyCost);
 
@@ -25,7 +25,7 @@ public interface IArea {
 
 	/**
 	 * Set elevation for area.
-	 * @param elevation
+	 * @param elevation double
 	 */
 	void setElevation(double elevation);
 
@@ -37,7 +37,7 @@ public interface IArea {
 
 	/**
 	 * Get radiation set for the area.
-	 * @param radiation
+	 * @param radiation double
 	 */
 	void setRadiation(double radiation);
 

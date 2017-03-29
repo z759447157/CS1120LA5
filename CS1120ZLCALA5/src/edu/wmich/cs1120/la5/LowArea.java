@@ -10,9 +10,9 @@ public class LowArea extends Area{
 	
 	/**
 	 * LowArea constructor for convenience.
-	 * @param basicEnergyCost
-	 * @param elevation
-	 * @param radiation
+	 * @param basicEnergyCost double
+	 * @param elevation double
+	 * @param radiation double
 	 */
 	public LowArea(double basicEnergyCost,double elevation,double radiation){
 		super(basicEnergyCost,elevation,radiation);

@@ -7,8 +7,8 @@ import java.io.IOException;
 public interface IMapCreator {
 	/**
 	 * Scan terrain, read file. Declare low/high area base on radiation. Read area object to 2D array.
-	 * @param fileName
-	 * @param threshold
+	 * @param fileName String
+	 * @param threshold int
 	 * @throws IOException - need this for reading files.
 	 */
 	public void scanTerrain(String fileName, int threshold) throws IOException;
@@ -21,7 +21,7 @@ public interface IMapCreator {
 
 	/**
 	 * Set Scanner for TerrainScanner.
-	 * @param scanner
+	 * @param scanner TerrainScanner
 	 */
 	public void setScanner(TerrainScanner scanner);
 }

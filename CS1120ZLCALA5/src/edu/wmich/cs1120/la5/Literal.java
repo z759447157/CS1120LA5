@@ -15,7 +15,6 @@ public class Literal implements IExpression{
 	/**
 	 * value setter
 	 * @param value Integer
-	 * @return value
 	 */
 	public Literal(Integer value){
 		this.value = value;

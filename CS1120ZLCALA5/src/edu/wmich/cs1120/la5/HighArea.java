@@ -12,9 +12,9 @@ public class HighArea extends Area{
 	
 	/**
 	 * HighArea constructor for convenience.
-	 * @param basicEnergyCost
-	 * @param elevation
-	 * @param radiation
+	 * @param basicEnergyCost double
+	 * @param elevation double
+	 * @param radiation double
 	 */
 	public HighArea(double basicEnergyCost,double elevation,double radiation){
 		super(basicEnergyCost,elevation,radiation);

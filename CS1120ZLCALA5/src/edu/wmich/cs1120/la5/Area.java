@@ -36,7 +36,7 @@ public abstract class Area implements IArea{
 
 	/**
 	 * Set basic energy cost for area.
-	 * @param basicEnergyCost
+	 * @param basicEnergyCost double
 	 */
 	@Override
 	public void setBasicEnergyCost(double basicEnergyCost) {
@@ -57,7 +57,7 @@ public abstract class Area implements IArea{
 
 	/**
 	 * Set elevation for area.
-	 * @param elevation
+	 * @param elevation double
 	 */
 	@Override
 	public void setElevation(double elevation) {
@@ -77,7 +77,7 @@ public abstract class Area implements IArea{
 
 	/**
 	 * Get radiation set for the area.
-	 * @param radiation
+	 * @param radiation double
 	 */
 	@Override
 	public void setRadiation(double radiation) {

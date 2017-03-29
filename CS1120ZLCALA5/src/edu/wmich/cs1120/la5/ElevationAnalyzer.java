@@ -7,18 +7,29 @@ public class ElevationAnalyzer implements IRover{
 	private ArrayList<IArea> path;
 	private String analysis;
 	@Override
+	/**
+	 * Array list IArea
+	 * @return path 
+	*/
 	public ArrayList<IArea> getPath() {
 		// TODO Auto-generated method stub
 		return path;
 	}
 
 	@Override
+	/**
+	 * Set Path
+	 * @param path ArrayList<IArea>
+	*/
 	public void setPath(ArrayList<IArea> path) {
 		// TODO Auto-generated method stub
 		this.path = path;
 	}
 
 	@Override
+	/**
+	 * Analyzes path
+	*/
 	public void analyzePath() {
 		// TODO Auto-generated method stub
 		double averageElevation = 0;
@@ -29,18 +40,28 @@ public class ElevationAnalyzer implements IRover{
 	}
 
 	@Override
+	/**
+	 * Returns analysis
+	*/
 	public String getAnalysis() {
 		// TODO Auto-generated method stub
 		return analysis;
 	}
 
 	@Override
+	/**
+	 * Sets analysis
+	*/
 	public void setAnalysis(String analysis) {
 		// TODO Auto-generated method stub
 		this.analysis = analysis;
 	}
 	
 	@Override
+	/**
+	 * Returns text
+	 * @return "Elevation analyzer:"
+	*/
 	public String toString(){
 		return "Elevation analyzer: ";
 	}

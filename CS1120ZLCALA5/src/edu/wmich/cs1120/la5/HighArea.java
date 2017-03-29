@@ -21,6 +21,7 @@ public class HighArea extends Area{
 	}
 	 /**
 	  * Overridden method for calculating total consumed energy.
+	  * @return getBasicEnergy int
 	  */
 	public double calcConsumedEnergy() {
 		// TODO Auto-generated method stub

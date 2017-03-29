@@ -20,8 +20,8 @@ public class LowArea extends Area{
 	
 	/**
 	  * Overridden method for calculating total consumed energy.
+	  * @return getBasicEnergyCost*2 int
 	  */
-	
 	public double calcConsumedEnergy() {
 		// TODO Auto-generated method stub
 		return getBasicEnergyCost() * 2;

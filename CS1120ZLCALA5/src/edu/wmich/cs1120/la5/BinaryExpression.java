@@ -10,6 +10,12 @@ public class BinaryExpression implements IExpression{
 		// TODO Auto-generated method stub
 		return op.perform(left, right);
 	}
+	/**
+	 * Assigns from parameter to "this"
+	 * @param left IExpression
+	 * @param right IExpression
+	 * @param op IExpression
+	*/
 	public BinaryExpression(IExpression left, IExpression right, IOperation op) {
 		// TODO Auto-generated method stub
 		this.left = left;

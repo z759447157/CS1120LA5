@@ -11,11 +11,17 @@ public class MapCreatorFromDat implements IMapCreator{
 	private TerrainScanner scanner = new TerrainScanner();
 	private IArea[][] area = new IArea[10][10];
 	private IExpression factory;
+	@SuppressWarnings({ "resource", "unused" })
 	@Override
-	public void scanTerrain(String fileName, int threshold) throws IOException {
+	/**
+	 * ScanTerrain scans the terrain
+	 * @param fileName String
+	 * @param threshold int
+	 */
+		public void scanTerrain(String fileName, int threshold) throws IOException {
 		// TODO Auto-generated method stub
 		FileInputStream file_in = new FileInputStream("Terrain.dat");
-        DataInputStream data_in = new DataInputStream (file_in );
+		DataInputStream data_in = new DataInputStream (file_in );
         RandomAccessFile file = new RandomAccessFile("Terrain.dat","r");
         int i = 0;
 		int n = 0;
@@ -78,12 +84,20 @@ public class MapCreatorFromDat implements IMapCreator{
 	}
 
 	@Override
+	/**
+	 * TerrainScanner getter
+	 * @return scanner
+	 */
 	public TerrainScanner getScanner() {
 		// TODO Auto-generated method stub
 		return scanner;
 	}
 
 	@Override
+	/**
+	 * scanner setter
+	 * @param scanner TerrainScanner
+	 */
 	public void setScanner(TerrainScanner scanner) {
 		// TODO Auto-generated method stub
 		this.scanner = scanner;
